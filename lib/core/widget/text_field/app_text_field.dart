@@ -36,10 +36,3 @@ class AppTextField extends StatelessWidget {
     );
   }
 }
-
-
-
-// Theme.of(context).colorScheme.onBackground.withOpacity(0.2),
-
-// filled: true,
-//         fillColor: Theme.of(context).colorScheme.onBackground.withOpacity(0.2),

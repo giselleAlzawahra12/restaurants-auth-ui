@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/core/app_spacing/app_spacing.dart';
 import 'package:restaurant_app/core/widget/animation/app_animation.dart';
-import 'package:restaurant_app/core/widget/button/app_elevated_button.dart';
 import 'package:restaurant_app/core/widget/onboarding/auth_container.dart';
 import 'package:restaurant_app/core/widget/scaffold/onboarding/onboarding_scaffold.dart';
 import 'package:restaurant_app/core/widget/text/app_text.dart';
 import 'package:restaurant_app/core/widget/text_field/app_text_field.dart';
-import '../../../../../core/app_images/app_images.dart';
 import '../../../../../core/widget/onboarding/logo_and_name_text.dart';
-import '../../../register/presentation/view/register_screen.dart';
 import '../widget/dont_have_an_account_text.dart';
 
 class LoginScreen extends StatefulWidget {

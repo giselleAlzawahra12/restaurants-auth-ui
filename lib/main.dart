@@ -3,10 +3,6 @@ import 'core/theme/theme.dart';
 import 'feature/onboarding/splash/splash_screen.dart';
 
 void main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
-
-  // await initialization();
-
   return runApp(
     const MyApp(),
   );
@@ -24,8 +20,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// Future initialization() async {
-//   await Future.delayed(const Duration(seconds: 2));
-//   FlutterNativeSplash.remove;
-// }
