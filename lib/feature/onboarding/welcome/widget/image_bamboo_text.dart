@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/app_images/app_images.dart';
+import '../../../../core/app_images/app_images.dart';
 
-class ImageBambooText extends StatelessWidget {
-  const ImageBambooText({super.key});
+class BambooImage extends StatelessWidget {
+  const BambooImage({super.key});
 
   @override
   Widget build(BuildContext context) {

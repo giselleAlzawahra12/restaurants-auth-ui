@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/feature/onboarding/login/presentation/view/login_screen.dart';
 import 'package:restaurant_app/feature/onboarding/register/presentation/view/register_screen.dart';
-import '../../../../../core/widget/button/app_elevated_button.dart';
+import '../../../../core/widget/button/app_elevated_button.dart';
 
 class WelcomeContainer extends StatelessWidget {
   const WelcomeContainer({super.key});
