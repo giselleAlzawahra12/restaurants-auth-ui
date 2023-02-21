@@ -8,10 +8,8 @@ class BambooImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 200,
-      child: Expanded(
-        child: Image.asset(
-          AppImages.intro,
-        ),
+      child: Image.asset(
+        AppImages.intro,
       ),
     );
   }

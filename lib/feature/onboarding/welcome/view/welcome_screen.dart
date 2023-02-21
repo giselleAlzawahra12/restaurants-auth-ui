@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widget/image_bamboo_text.dart';
+import '../widget/bamboo_image.dart';
 import '../widget/welcome_container.dart';
 
 class WelcomeScreen extends StatelessWidget {
