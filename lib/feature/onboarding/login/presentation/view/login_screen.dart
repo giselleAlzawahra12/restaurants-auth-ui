@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/core/app_spacing/app_spacing.dart';
+import 'package:restaurant_app/core/cash/secure_storage.dart';
 import 'package:restaurant_app/core/widget/animation/app_animation.dart';
 import 'package:restaurant_app/core/widget/onboarding/auth_container.dart';
 import 'package:restaurant_app/core/widget/scaffold/onboarding/onboarding_scaffold.dart';
 import 'package:restaurant_app/core/widget/text/app_text.dart';
 import 'package:restaurant_app/core/widget/text_field/app_text_field.dart';
+import 'package:restaurant_app/feature/home/presentation/view/home_screen.dart';
 import '../../../../../core/widget/onboarding/logo_and_name_text.dart';
 import '../widget/dont_have_an_account_text.dart';
 
@@ -17,11 +19,14 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen>
     with TickerProviderStateMixin {
-  AutovalidateMode autoValidate = AutovalidateMode.disabled;
   final formKey = GlobalKey<FormState>();
+  AutovalidateMode autoValidate = AutovalidateMode.disabled;
 
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+// Create storage
+  final SecureStorage storage = SecureStorage();
+
+  TextEditingController emailTextController = TextEditingController();
+  TextEditingController passwordTextController = TextEditingController();
   bool obscureText = false;
 
   @override
@@ -47,11 +52,21 @@ class _LoginScreenState extends State<LoginScreen>
                       if (!formKey.currentState!.validate()) {
                         setState(() =>
                             autoValidate = AutovalidateMode.onUserInteraction);
+                      } else {
+                        storage.writeSecureData(
+                            'email', emailTextController.text);
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomeScreen(),
+                          ),
+                        );
                       }
                     },
                     children: [
                       AppTextField(
-                        textController: emailController,
+                        keyboardType: TextInputType.text,
+                        textController: emailTextController,
                         hintText: 'Email',
                         suffixIcon: const Icon(Icons.email),
                         validator: (email) {
@@ -63,7 +78,8 @@ class _LoginScreenState extends State<LoginScreen>
                       ),
                       AppTextField(
                         obscureText: obscureText,
-                        textController: passwordController,
+                        keyboardType: TextInputType.text,
+                        textController: passwordTextController,
                         hintText: 'Password',
                         suffixIcon: IconButton(
                           icon: Icon(

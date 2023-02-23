@@ -42,6 +42,12 @@ class _AppAnimationState extends State<AppAnimation>
   }
 
   @override
+  dispose() {
+    controller.dispose(); // you need this
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     if (MediaQuery.of(context).viewInsets.bottom != 0) {
       controller.forward();
